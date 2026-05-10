@@ -8,21 +8,17 @@ public class Graph {
         adjacencyList = new HashMap<>();
     }
 
-    // Add a new vertex
     public void addVertex(Vertex v) {
         adjacencyList.putIfAbsent(v.getId(), new ArrayList<>());
     }
 
-    // Add an edge between vertices
     public void addEdge(int from, int to) {
 
         adjacencyList.get(from).add(to);
 
-        // Uncomment for undirected graph
         adjacencyList.get(to).add(from);
     }
 
-    // Print graph structure
     public void printGraph() {
 
         System.out.println("Adjacency List:");
@@ -39,7 +35,6 @@ public class Graph {
         }
     }
 
-    // Breadth-First Search
     public void bfs(int start) {
 
         Set<Integer> visited = new HashSet<>();
@@ -67,7 +62,6 @@ public class Graph {
         System.out.println();
     }
 
-    // Depth-First Search
     public void dfs(int start) {
 
         Set<Integer> visited = new HashSet<>();
